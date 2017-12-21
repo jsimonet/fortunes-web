@@ -1,3 +1,9 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
+fortunes:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /fortunes/
+        permanent: true
+#app_lucky_number:
+#    path: /lucky/number
+#    controller: App\Controller\LuckyController::number
