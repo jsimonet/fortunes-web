@@ -95,5 +95,27 @@ class FortunesController extends Controller
    * @Route("/fortunes/list/")
    */
   public function list() {
+    $frepo = $this->getDoctrine()->getRepository(Fortune::class);
+
+    $fortunes = $frepo->findAll();
+    return $this->render('fortunes/show-list.html.twig',
+      array(
+        'fortunes' => array_map(
+          function ($db_f) {
+            return [
+              'creationDate' => $db_f->getCreationDate()->format('c'),
+              'content' => $db_f->getContent()
+            ];
+          },
+          $fortunes
+        )
+      )
+    );
+  }
+
+  /**
+   * @Route("/fortunes/update")
+   */
+  public function update( Fortune $id ) {
   }
 }

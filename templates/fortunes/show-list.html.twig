@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  <h1>Toutes les Fortunes !</h1>
+  {% for f in fortunes %}
+    <br />
+        <label>Date de creation</label>
+        <p>{{ f.creationDate }}</p>
+        <p><blockquote><pre>{{ f.content }}</pre></blockquote></p>
+  {% endfor %}
+{% endblock %}
