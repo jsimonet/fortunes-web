@@ -18,6 +18,9 @@ class FortuneRepository extends ServiceEntityRepository
         $ids = $this->createQueryBuilder('f')
                ->select('f.id')
                ->getQuery()->getResult();
+	if ( count( $ids ) == 0 ) {
+            return FALSE;
+        }
         $selectedId = array_rand( $ids );
         $dbId       = $ids[$selectedId]['id'];
 

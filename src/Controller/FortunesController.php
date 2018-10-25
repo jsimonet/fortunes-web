@@ -23,6 +23,9 @@ class FortunesController extends Controller
   {
     $repo = $this->getDoctrine()->getRepository(Fortune::class);
     $fortune = $repo->findRandom();
+    if ( ! $fortune ) {
+        return $this->redirect('/fortunes/list');
+    }
     return $this->render(
       'fortunes/show.html.twig',
       array(
