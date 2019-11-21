@@ -21,6 +21,8 @@ Encore
     })
     // uncomment for legacy applications that require $/jQuery as a global variable
     .autoProvidejQuery()
+    //.enableSingleRuntimeChunk()
+    .disableSingleRuntimeChunk()
 ;
 
 module.exports = Encore.getWebpackConfig();

@@ -248,9 +248,6 @@
     "symfony/stopwatch": {
         "version": "v4.0.1"
     },
-    "symfony/translation-contracts": {
-        "version": "v1.1.7"
-    },
     "symfony/twig-bridge": {
         "version": "v4.0.1"
     },
